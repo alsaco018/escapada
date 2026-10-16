@@ -15,30 +15,39 @@ const Itinerary = () => (
           Viernes a lunes
         </h2>
         <p className="mt-4 max-w-2xl text-[var(--color-ink-soft)]/80">
-          Desplázate para apilar cada jornada. Horarios orientativos: revisad tráfico, meteorología y
-          aperturas en fechas concretas.
+          Desplázate para apilar cada jornada. En móvil, si la card es más alta que la pantalla,
+          puedes hacer scroll dentro de ella. Horarios orientativos.
         </p>
       </FadeContent>
     </div>
 
     <ScrollStack
       useWindowScroll
-      itemDistance={120}
-      itemStackDistance={28}
-      stackPosition="18%"
-      baseScale={0.88}
-      itemScale={0.04}
+      itemDistance={100}
+      itemStackDistance={24}
+      stackPosition="12%"
+      baseScale={0.9}
+      itemScale={0.03}
       dimAmount={0.35}
-      className="mx-auto max-w-3xl px-5 md:px-8"
+      className="mx-auto max-w-3xl px-3 sm:px-5 md:px-8"
     >
       {days.map((day) => (
         <ScrollStackItem
           key={day.id}
-          itemClassName="!h-auto !min-h-[22rem] bg-[var(--color-cream)] text-[var(--color-ink)]"
-          style={{ height: 'auto', minHeight: '22rem' }}
+          itemClassName="!h-auto !min-h-0 !max-h-[calc(100svh-6.5rem)] !overflow-hidden !p-0 bg-[var(--color-cream)] text-[var(--color-ink)]"
+          style={{
+            height: 'auto',
+            minHeight: 0,
+            maxHeight: 'calc(100svh - 6.5rem)',
+            padding: 0,
+            overflow: 'hidden',
+          }}
         >
-          <article id={day.id} className="flex h-full flex-col gap-4 scroll-mt-28">
-            <header className="flex flex-wrap items-end justify-between gap-3 border-b border-[var(--color-olive)]/15 pb-4">
+          <article
+            id={day.id}
+            className="flex max-h-[calc(100svh-6.5rem)] flex-col gap-3 overflow-y-auto overscroll-contain scroll-mt-28 p-4 sm:gap-4 sm:p-6 md:p-8 [-webkit-overflow-scrolling:touch]"
+          >
+            <header className="flex flex-wrap items-end justify-between gap-3 border-b border-[var(--color-olive)]/15 pb-3 sm:pb-4">
               <div>
                 <p
                   className="mb-1 text-xs font-semibold uppercase tracking-[0.2em]"
@@ -46,10 +55,10 @@ const Itinerary = () => (
                 >
                   {day.date}
                 </p>
-                <h3 className="font-display text-2xl md:text-3xl">{day.title}</h3>
+                <h3 className="font-display text-xl sm:text-2xl md:text-3xl">{day.title}</h3>
                 <p className="text-sm text-[var(--color-ink-soft)]/70">{day.place}</p>
               </div>
-              <p className="max-w-[14rem] text-right text-xs leading-snug text-[var(--color-ink-soft)]/65">
+              <p className="max-w-[14rem] text-left text-xs leading-snug text-[var(--color-ink-soft)]/65 sm:text-right">
                 {day.drive}
               </p>
             </header>
