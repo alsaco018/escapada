@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../sections/SiteNav';
+import Hero from '../sections/Hero';
+import TripMeta from '../sections/TripMeta';
+import Idea from '../sections/Idea';
+import Destinations from '../sections/Destinations';
+import JerteMoment from '../sections/JerteMoment';
+import Itinerary from '../sections/Itinerary';
+import Tips from '../sections/Tips';
+import Footer from '../sections/Footer';
+---
+
+<BaseLayout>
+  <SiteNav client:load />
+  <main>
+    <Hero client:load />
+    <TripMeta client:visible />
+    <Idea client:visible />
+    <Destinations client:visible />
+    <JerteMoment client:visible />
+    <Itinerary client:visible />
+    <Tips client:load />
+  </main>
+  <Footer client:visible />
+</BaseLayout>
