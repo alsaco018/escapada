@@ -47,7 +47,6 @@ const SiteNav = () => (
       }
       logoHref="#top"
       items={items}
-      cta={{ label: 'Itinerario', href: '#itinerario' }}
       theme="dark"
       surface="glass"
       accentColor="#c4a35a"

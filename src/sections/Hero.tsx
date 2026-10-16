@@ -64,25 +64,6 @@ const Hero = () => (
       <p className="max-w-xl text-base leading-relaxed text-[var(--color-stone)] md:text-lg">
         {trip.subtitle}
       </p>
-
-      <div className="flex flex-wrap gap-3 pt-2">
-        <a
-          href="#itinerario"
-          className="inline-flex items-center justify-center rounded-full bg-[var(--color-gold)] px-6 py-3 text-sm font-semibold text-[var(--color-olive-deep)] transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-gold)]"
-          tabIndex={0}
-          aria-label="Ver el itinerario del viaje"
-        >
-          Ver itinerario
-        </a>
-        <a
-          href="#destinos"
-          className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/5 px-6 py-3 text-sm font-medium text-[var(--color-cream)] backdrop-blur-sm transition hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-          tabIndex={0}
-          aria-label="Explorar destinos"
-        >
-          Destinos
-        </a>
-      </div>
     </div>
   </section>
 );
