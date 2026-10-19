@@ -62,6 +62,53 @@ export const trip = {
   companyImageAlt: 'La mejor compañía del viaje',
 } as const;
 
+export interface StayInfo {
+  name: string;
+  type: string;
+  address: string;
+  city: string;
+  rating: string;
+  ratingLabel: string;
+  reviews: string;
+  summary: string;
+  highlights: string[];
+  checkIn: string;
+  checkOut: string;
+  bookingUrl: string;
+  mapsUrl: string;
+  images: { src: string; alt: string }[];
+}
+
+export const stay: StayInfo = {
+  name: 'Bailén 3',
+  type: 'Apartamento entero',
+  address: 'Calle Bailén 3',
+  city: '10004 Cáceres',
+  rating: '9,6',
+  ratingLabel: 'Excepcional',
+  reviews: '97 comentarios',
+  summary:
+    'Apartamento nuevo (2024) a unos minutos a pie de la Plaza Mayor y el casco monumental. Ideal como base para las excursiones del sábado, domingo y lunes.',
+  highlights: [
+    '2 dormitorios · 1 baño · cocina equipada',
+    'Wi‑Fi, aire acondicionado y patio',
+    'A ~400 m de la Plaza Mayor',
+    'Entrada 15:00 · Salida 11:00',
+  ],
+  checkIn: '15:00',
+  checkOut: '11:00',
+  bookingUrl: 'https://www.booking.com/hotel/es/bailen-3.es.html',
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Calle+Bail%C3%A9n+3,+10004+C%C3%A1ceres',
+  images: [
+    { src: '/images/bailen/bailen-1.jpg', alt: 'Dormitorio principal de Bailén 3' },
+    { src: '/images/bailen/bailen-2.jpg', alt: 'Detalle del dormitorio en Bailén 3' },
+    { src: '/images/bailen/bailen-3.jpg', alt: 'Interior del apartamento Bailén 3' },
+    { src: '/images/bailen/bailen-4.jpg', alt: 'Espacio del apartamento Bailén 3' },
+    { src: '/images/bailen/bailen-5.jpg', alt: 'Zona de estar de Bailén 3' },
+    { src: '/images/bailen/bailen-6.jpg', alt: 'Otra vista del apartamento Bailén 3' },
+  ],
+};
+
 export const destinations: Destination[] = [
   {
     id: 'caceres',

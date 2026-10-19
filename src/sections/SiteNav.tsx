@@ -10,6 +10,7 @@ const items = [
     textColor: '#f2efe8',
     links: [
       { label: 'La idea', href: '#idea', ariaLabel: 'Ir a la idea del viaje' },
+      { label: 'Base', href: '#base', ariaLabel: 'Ir a la base de operaciones' },
       { label: 'Destinos', href: '#destinos', ariaLabel: 'Ir a destinos' },
     ],
   },
